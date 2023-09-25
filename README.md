@@ -28,14 +28,14 @@
 - [ ] Conexão com o Banco
 - [ ] Cadastro de Administrador
 - [ ] Cadastro de Aluno
-- [ ] Formulario de Alunos
+- [ ] Formulário de Alunos
 - [ ] Cadastro de Professor
-- [ ] Formulario de Professores
+- [ ] Formulário de Professores
 - [ ] Cadastro de Turma
-- [ ] Formulario da
+- [ ] Formulário da
 - [ ] Login
 - [ ] Curso
-- [ ] Formulario dos Cursos
+- [ ] Formulário dos Cursos
 
 <h2>Demonstração da aplicação</h2>
 <div><img src=""/></div>
