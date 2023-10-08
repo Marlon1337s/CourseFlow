@@ -1,16 +1,14 @@
 package program;
 import javax.swing.SwingUtilities;
 
-import forms.FrmLogin;
+import forms.gui.FrmLogin;
 
 public class Main {
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> {
-			FrmLogin frmPrincipal = new FrmLogin();
-            frmPrincipal.setVisible(true);
+			FrmLogin frmLogin = new FrmLogin();
+            frmLogin.setVisible(true);
         });
-
 	}
-
 }
