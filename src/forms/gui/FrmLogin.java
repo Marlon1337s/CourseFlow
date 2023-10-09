@@ -91,6 +91,7 @@ public class FrmLogin extends JFrame {
 				SwingUtilities.invokeLater(() -> {
 					FrmEsqueceuSenha frmResetaSenha = new FrmEsqueceuSenha();
 		            frmResetaSenha.setVisible(true);
+		            setVisible(false);
 		        });
 			}
 		});

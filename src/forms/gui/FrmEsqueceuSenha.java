@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -85,6 +87,15 @@ public class FrmEsqueceuSenha extends JFrame {
 		contentPane.add(pwdConfirma);
 		
 		JButton btnSalvar = new JButton("SALVAR E VOLTAR");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SwingUtilities.invokeLater(() -> {
+					FrmLogin frmLogin = new FrmLogin();
+		            frmLogin.setVisible(true);
+		            setVisible(false);
+		        });
+			}
+		});
 		btnSalvar.setHorizontalAlignment(SwingConstants.LEADING);
 		btnSalvar.setBounds(71, 285, 142, 35);
 		contentPane.add(btnSalvar);
@@ -92,7 +103,11 @@ public class FrmEsqueceuSenha extends JFrame {
 		JButton btnCancelar = new JButton("CANCELAR");
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				SwingUtilities.invokeLater(() -> {
+					FrmLogin frmLogin = new FrmLogin();
+		            frmLogin.setVisible(true);
+		            setVisible(false);
+		        });
 			}
 		});
 		btnCancelar.setBounds(230, 285, 121, 35);
