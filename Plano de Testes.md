@@ -1,6 +1,6 @@
 # Plano de Teste
 
-**nome do sistema**
+**Course Flow**
 
 *versão x.x*
 
