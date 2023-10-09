@@ -78,6 +78,7 @@ public class FrmLogin extends JFrame {
 				SwingUtilities.invokeLater(() -> {
 					FrmPrincipal frmPrincipal = new FrmPrincipal();
 		            frmPrincipal.setVisible(true);
+		            setVisible(false);
 		        });
 			}
 		});

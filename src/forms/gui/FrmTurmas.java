@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class Turmas extends JFrame {
+public class FrmTurmas extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel ctpTurmas;
@@ -18,7 +18,7 @@ public class Turmas extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Turmas frame = new Turmas();
+					FrmTurmas frame = new FrmTurmas();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,7 +30,7 @@ public class Turmas extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Turmas() {
+	public FrmTurmas() {
 		setTitle("Turmas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

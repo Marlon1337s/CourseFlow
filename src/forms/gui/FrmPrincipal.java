@@ -40,16 +40,25 @@ public class FrmPrincipal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setMargin(new Insets(1, 1, 1, 1));
-		menuBar.setForeground(new Color(100, 149, 237));
-		setJMenuBar(menuBar);
+		JMenuBar menuPrincipal = new JMenuBar();
+		menuPrincipal.setMargin(new Insets(1, 1, 1, 1));
+		menuPrincipal.setForeground(new Color(100, 149, 237));
+		setJMenuBar(menuPrincipal);
 		
 		JMenu menuAlunos = new JMenu("Alunos");
-		menuBar.add(menuAlunos);
+		menuPrincipal.add(menuAlunos);
+		
 		
 		JMenuItem AlunosCadastro = new JMenuItem("Cadastrar");
 		menuAlunos.add(AlunosCadastro);
+		AlunosCadastro.addActionListener(
+	            new java.awt.event.ActionListener() {                
+	                public void actionPerformed(java.awt.event.ActionEvent evt) {	                    
+	                    FrmAlunos frmAlunos = new FrmAlunos();
+	                    frmAlunos.setVisible(true);                   
+	                }   
+	            }
+	        );
 		
 		JMenuItem AlunosAlterar = new JMenuItem("Alterar");
 		menuAlunos.add(AlunosAlterar);
@@ -60,11 +69,20 @@ public class FrmPrincipal extends JFrame {
 		JMenuItem AlunosListar = new JMenuItem("Listar");
 		menuAlunos.add(AlunosListar);
 		
+		
 		JMenu MenuCursos = new JMenu("Cursos");
-		menuBar.add(MenuCursos);
+		menuPrincipal.add(MenuCursos);
 		
 		JMenuItem CursosCadastro = new JMenuItem("Cadastrar");
 		MenuCursos.add(CursosCadastro);
+	       CursosCadastro.addActionListener(
+		            new java.awt.event.ActionListener() {                
+		                public void actionPerformed(java.awt.event.ActionEvent evt) {	                    
+		                    FrmCursos frmCurso = new FrmCursos();
+		                    frmCurso.setVisible(true);                   
+		                }   
+		            }
+		        );
 		
 		JMenuItem CursosAlterar = new JMenuItem("Alterar");
 		MenuCursos.add(CursosAlterar);
@@ -76,10 +94,18 @@ public class FrmPrincipal extends JFrame {
 		MenuCursos.add(CursosListar);
 		
 		JMenu MenuProfessores = new JMenu("Professores");
-		menuBar.add(MenuProfessores);
+		menuPrincipal.add(MenuProfessores);
 		
 		JMenuItem ProfsCadastro = new JMenuItem("Cadastrar");
 		MenuProfessores.add(ProfsCadastro);
+		 ProfsCadastro.addActionListener(
+		            new java.awt.event.ActionListener() {                
+		                public void actionPerformed(java.awt.event.ActionEvent evt) {	                    
+		                    FrmProfessores frmProf = new FrmProfessores();
+		                    frmProf.setVisible(true);                   
+		                }   
+		            }
+		        );
 		
 		JMenuItem ProfsAlterar = new JMenuItem("Alterar");
 		MenuProfessores.add(ProfsAlterar);
@@ -91,10 +117,18 @@ public class FrmPrincipal extends JFrame {
 		MenuProfessores.add(ProfsListar);
 		
 		JMenu MenuTurmas = new JMenu("Turmas");
-		menuBar.add(MenuTurmas);
+		menuPrincipal.add(MenuTurmas);
 		
 		JMenuItem TurmasCadastrar = new JMenuItem("Cadastrar");
 		MenuTurmas.add(TurmasCadastrar);
+		TurmasCadastrar.addActionListener(
+	            new java.awt.event.ActionListener() {                
+	                public void actionPerformed(java.awt.event.ActionEvent evt) {	                    
+	                    FrmTurmas frmTurma = new FrmTurmas();
+	                    frmTurma.setVisible(true);                   
+	                }   
+	            }
+	        );
 		
 		JMenuItem TurmasAlterar = new JMenuItem("Alterar");
 		MenuTurmas.add(TurmasAlterar);
@@ -109,5 +143,6 @@ public class FrmPrincipal extends JFrame {
 
 		setContentPane(ctpPrincipal);
 		ctpPrincipal.setLayout(null);
-	}
+		
+		}
 }

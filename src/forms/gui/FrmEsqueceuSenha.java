@@ -12,6 +12,8 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class FrmEsqueceuSenha extends JFrame {
 
@@ -84,10 +86,15 @@ public class FrmEsqueceuSenha extends JFrame {
 		
 		JButton btnSalvar = new JButton("SALVAR E VOLTAR");
 		btnSalvar.setHorizontalAlignment(SwingConstants.LEADING);
-		btnSalvar.setBounds(82, 285, 121, 35);
+		btnSalvar.setBounds(71, 285, 142, 35);
 		contentPane.add(btnSalvar);
 		
 		JButton btnCancelar = new JButton("CANCELAR");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
 		btnCancelar.setBounds(230, 285, 121, 35);
 		contentPane.add(btnCancelar);
 	}
