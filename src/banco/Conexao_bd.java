@@ -5,12 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Conexao_bd {
-	 private Connection conexao;
+public abstract class Conexao_bd {
+	 public Connection conexao;
 
 	    public void conectar() throws SQLException {
 	        try {
-	            String url = "jdbc:mysql://localhost:3306/cursos_bd";
+	            String url = "jdbc:mysql://localhost:3306/courseflow";
 	            String usuario = "root";
 	            String senha = "";
 

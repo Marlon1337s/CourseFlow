@@ -138,6 +138,15 @@ public class FrmPrincipal extends JFrame {
 		
 		JMenuItem TurmasListar = new JMenuItem("Lsitar");
 		MenuTurmas.add(TurmasListar);
+		
+		JMenu MenuFinanceiro = new JMenu("Financeiro");
+		menuPrincipal.add(MenuFinanceiro);
+		
+		JMenuItem FinanceiroAReceber = new JMenuItem("Contas a Receber");
+		MenuFinanceiro.add(FinanceiroAReceber);
+		
+		JMenuItem FinanceiroAPagar = new JMenuItem("Contas a Pagar");
+		MenuFinanceiro.add(FinanceiroAPagar);
 		ctpPrincipal = new JPanel();
 		ctpPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 

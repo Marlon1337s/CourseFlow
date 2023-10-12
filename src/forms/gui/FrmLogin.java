@@ -5,9 +5,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import banco.ValidacaoLogin;
+
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 //import java.awt.Color;
@@ -22,9 +26,7 @@ public class FrmLogin extends JFrame {
 	private JTextField txtUsuario;
 	private JPasswordField pwdSenha;
 
-	/**
-	 * Launch the application.
-	 */
+	ValidacaoLogin validaUsuario = new ValidacaoLogin();
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -75,12 +77,22 @@ public class FrmLogin extends JFrame {
 		JButton btnEntrar = new JButton("ENTRAR");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				SwingUtilities.invokeLater(() -> {
-					FrmPrincipal frmPrincipal = new FrmPrincipal();
-		            frmPrincipal.setVisible(true);
-		            setVisible(false);
-		        });
-			}
+				String login = txtUsuario.getText();
+				String senha = new String(pwdSenha.getPassword());
+				
+				boolean loginValido = validaUsuario.validarLogin(login, senha);
+				
+				if (loginValido) {
+					SwingUtilities.invokeLater(() -> {
+						FrmPrincipal frmPrincipal = new FrmPrincipal();
+			            frmPrincipal.setVisible(true);
+			            setVisible(false);
+			        });
+				}else {
+					JOptionPane.showMessageDialog(null,"USUÁRIO OU SENHA INCORRETOS!");
+				}
+				
+				}
 		});
 		btnEntrar.setBounds(77, 185, 89, 23);
 		CtpLogin.add(btnEntrar);

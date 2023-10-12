@@ -7,5 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/zulu17.44.15-ca-jdk17.0.8-win_x64"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/mysql/mysql-connector-j-8.1.0/mysql-connector-j-8.1.0/mysql-connector-j-8.1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
