@@ -20,7 +20,7 @@ USE `courseflow` ;
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tbl_usuario` (
+CREATE TABLE IF NOT EXISTS `courseflow`.`tbl_usuario` (
   `idtbl_usuario` INT NOT NULL AUTO_INCREMENT,
   `login` VARCHAR(45) NOT NULL,
   `senha` VARCHAR(45) NOT NULL,
@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_curso`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tbl_curso` (
+CREATE TABLE IF NOT EXISTS `courseflow`.`tbl_curso` (
   `id_curso` INT NOT NULL AUTO_INCREMENT,
   `nome_curso` VARCHAR(45) NOT NULL,
   `conteudo_programatico` VARCHAR(50) NOT NULL,
@@ -50,7 +50,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_professor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tbl_professor` (
+CREATE TABLE IF NOT EXISTS `courseflow`.`tbl_professor` (
   `id_professor` INT NOT NULL AUTO_INCREMENT,
   `nome_professor` VARCHAR(45) NOT NULL,
   `imagem_professor` VARCHAR(45) NOT NULL,
@@ -68,7 +68,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_turma`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tbl_turma` (
+CREATE TABLE IF NOT EXISTS `courseflow`.`tbl_turma` (
   `id_turma` INT NOT NULL AUTO_INCREMENT,
   `numero_turma` VARCHAR(45) NOT NULL,
   `id_professor` INT NOT NULL,
@@ -81,16 +81,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tbl_turma` (
   `tbl_turmacol` VARCHAR(45) NULL,
   `status_turma` CHAR NOT NULL,
   PRIMARY KEY (`id_turma`),
-  INDEX `fk_curso_id_curso_idx` (`id_curso` ASC) VISIBLE,
-  INDEX `fk_professor_id_professor _idx` (`id_professor` ASC) VISIBLE,
+  INDEX `fk_curso_id_curso_idx` (`id_curso` ASC) ,
+  INDEX `fk_professor_id_professor _idx` (`id_professor` ASC) ,
   CONSTRAINT `fk_curso_id_curso`
     FOREIGN KEY (`id_curso`)
-    REFERENCES `mydb`.`tbl_curso` (`id_curso`)
+    REFERENCES `courseflow`.`tbl_curso` (`id_curso`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_professor_id_professor `
     FOREIGN KEY (`id_professor`)
-    REFERENCES `mydb`.`tbl_professor` (`id_professor`)
+    REFERENCES `courseflow`.`tbl_professor` (`id_professor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -99,7 +99,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_aluno`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tbl_aluno` (
+CREATE TABLE IF NOT EXISTS `courseflow`.`tbl_aluno` (
   `id_aluno` INT NOT NULL AUTO_INCREMENT,
   `cpf_aludo` VARCHAR(45) NOT NULL,
   `nome_aluno` VARCHAR(45) NOT NULL,
@@ -112,10 +112,10 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tbl_aluno` (
   `id_turma` INT NOT NULL,
   `status_aluno` CHAR BINARY NULL,
   PRIMARY KEY (`id_aluno`),
-  INDEX `fk_id_turma_id_tuma _idx` (`id_turma` ASC) VISIBLE,
+  INDEX `fk_id_turma_id_tuma _idx` (`id_turma` ASC) ,
   CONSTRAINT `fk_id_turma_id_tuma `
     FOREIGN KEY (`id_turma`)
-    REFERENCES `mydb`.`tbl_turma` (`id_turma`)
+    REFERENCES `courseflow`.`tbl_turma` (`id_turma`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -124,7 +124,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`tbl_financeiro`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tbl_financeiro` (
+CREATE TABLE IF NOT EXISTS `courseflow`.`tbl_financeiro` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `id_pagador` INT NULL,
   `valor` FLOAT NOT NULL,
@@ -135,16 +135,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tbl_financeiro` (
   `status` CHAR(1) BINARY NULL DEFAULT 'N',
   `observacao` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_id_aluno_id_pagador_idx` (`id_pagador` ASC) VISIBLE,
-  INDEX `fk_id_professor_id_recebedor_idx` (`id_recebedor` ASC) VISIBLE,
+  INDEX `fk_id_aluno_id_pagador_idx` (`id_pagador` ASC) ,
+  INDEX `fk_id_professor_id_recebedor_idx` (`id_recebedor` ASC) ,
   CONSTRAINT `fk_id_aluno_id_pagador`
     FOREIGN KEY (`id_pagador`)
-    REFERENCES `mydb`.`tbl_aluno` (`id_aluno`)
+    REFERENCES `courseflow`.`tbl_aluno` (`id_aluno`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_id_professor_id_recebedor`
     FOREIGN KEY (`id_recebedor`)
-    REFERENCES `mydb`.`tbl_professor` (`id_professor`)
+    REFERENCES `courseflow`.`tbl_professor` (`id_professor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
