@@ -2,8 +2,6 @@
 
 **Course Flow**
 
-*versão x.x*
-
 ## Histórico das alterações
 
    Data    | Versão |    Descrição   | Autor(a)
