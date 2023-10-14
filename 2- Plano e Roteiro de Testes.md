@@ -265,3 +265,30 @@ avaliar teste      |         | dd/mm/aaaa     | dd/mm/aaaa
 </br>
 
 # Roteiro de Teste
+
+<b>1- Funcionalidade: Adicionar curso</b>
+
+Cenário: Realizar o cadastro do curso no sistema <br>
+Dado que acessa o sistema Course Flow <br>
+Quando seleciona a opção curso adicionar <br>
+E realiza o preenchimento das informações <br>
+E pressiona Enter <br>
+Então exibe uma lista de cursos adicionados <br>
+
+<b>2- Funcionalidade: Excluir curso</b>
+
+Cenário: Realizar a exclusão de curso no sistema <br>
+Dado que acessa o sistema Course Flow <br>
+Quando seleciona a opção curso excluir <br>
+E realiza a confirmação da exclusão <br>
+E pressiona Enter <br>
+Extão o curso é excluido do banco de dados <br>
+
+<b>3- Funcionalidade: Cadastro de professores</b>
+
+Cenário: Realizar o cadsatro do professor no sistema <br>
+Dado que acessa o sistema Course Flow <br>
+Quando seleciona opção professor adicionar <br>
+E realiza o preenchimento das informações <br>
+E pressiona Enter <br>
+Então o professor é adicionado ao banco de dados <br>
