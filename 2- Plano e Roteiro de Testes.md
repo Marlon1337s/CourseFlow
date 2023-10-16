@@ -258,10 +258,10 @@ O Eclipse é um ambiente de desenvolvimento integrado (IDE) de código aberto am
 Tipo de teste      | Duração | data de início | data de término
 -------------------|---------|----------------|-----------------
 planejar teste     |         | 16/10/2023     | 23/10/2023
-projetar teste     |         | 30/10/2023     | 06/11/2023
-implementar teste  |         | 13/11/2023     | 20/11/2023
-executar teste     |         | 27/11/2023     | 04/12/2023
-avaliar teste      |         | 11/11/2023     | 18/12/2023
+projetar teste     |         | 24/10/2023     | 31/10/2023
+implementar teste  |         | 01/11/2023     | 08/11/2023
+executar teste     |         | 09/11/2023     | 16/11/2023
+avaliar teste      |         | 23/11/2023     | 30/11/2023
 </br>
 
 # Roteiro de Teste
