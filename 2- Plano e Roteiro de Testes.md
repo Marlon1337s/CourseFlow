@@ -61,7 +61,7 @@ Se possível usar teste automatizado.
             Objetivo
         </th>
         <th colspan="4">
-            descreva aqui o objetivo
+            Veririficar a construção e retorno dos métodos das classes.
         </th>
     </tr>
     <tr>
@@ -72,7 +72,7 @@ Se possível usar teste automatizado.
             (x) manual
         </th>
         <th colspan="2">
-            (x) automática
+            ( ) automática
         </th>
     </tr>
     <tr>
@@ -83,10 +83,10 @@ Se possível usar teste automatizado.
             Integração ( )
         </th>
         <th>
-            Sistema ( )
+            Sistema (x)
         </th>
         <th>
-            Unidade (x)
+            Unidade ( )
         </th>
         <th>
             Aceitação ( )
@@ -100,7 +100,7 @@ Se possível usar teste automatizado.
             Caixa branca (x)
         </th>
         <th colspan="2">
-            Caixa preta (x)
+            Caixa preta ( )
         </th>
     </tr>
     <tr>
@@ -126,7 +126,7 @@ Se possível usar teste automatizado.
             Objetivo
         </th>
         <th colspan="4">
-            Verificar se dados são mantidos após súbito desligamento do programa .
+            Verificar se os dados são mantidos após o desligamento do programa.
         </th>
     </tr>
     <tr>
@@ -134,7 +134,7 @@ Se possível usar teste automatizado.
             Técnica:
         </th>
         <th colspan="2">
-            (x) manual
+            ( ) manual
         </th>
         <th colspan="2">
             (x) automática
@@ -191,7 +191,7 @@ Se possível usar teste automatizado.
             Objetivo
         </th>
         <th colspan="4">
-            descreva aqui o objetivo
+            Integração entre as classes para uma sequência de ações do programa.
         </th>
     </tr>
     <tr>
@@ -202,7 +202,7 @@ Se possível usar teste automatizado.
             (x) manual
         </th>
         <th colspan="2">
-            (x) automática
+            ( ) automática
         </th>
     </tr>
     <tr>
@@ -227,7 +227,7 @@ Se possível usar teste automatizado.
             Abordagem do teste
         </th>
         <th colspan="2">
-            Caixa branca (x)
+            Caixa branca ( )
         </th>
         <th colspan="2">
             Caixa preta (x)
