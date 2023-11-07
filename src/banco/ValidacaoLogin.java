@@ -1,6 +1,6 @@
 package banco;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+//import java.sql.PreparedStatement;
+//import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ValidacaoLogin extends Conexao_bd{
@@ -23,26 +23,18 @@ public class ValidacaoLogin extends Conexao_bd{
 	}
 	
 	public boolean validarLogin(String login, String senha) {
-		
-        String sql = "SELECT * FROM tbl_usuario WHERE login = ? AND senha = ?";
-        
+	String sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '" + login + "' AND senha_usuario =" + "'"+ senha+"';";        
+       
         try {
-            ResultSet resultSet;
-            conectar();
-            try (PreparedStatement statement = conexao.prepareStatement(sql)) {
-                statement.setString(1, login);
-                statement.setString(2, senha);
-                resultSet = statement.executeQuery();
-                return resultSet.next(); 
-            } finally {
-                if (conexao != null && !conexao.isClosed()) {
-                    conexao.close();
-                }
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return false;
-        }
+		if(super.executarConsulta(sql) != null) {
+		  return true;
+		}else {
+		  return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
     }
 
 }
