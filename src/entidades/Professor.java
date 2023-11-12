@@ -1,13 +1,14 @@
 package entidades;
 
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import banco.Conexao_bd;
 
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Date;
-
-
-public class Professor extends Conexao_bd{
+public class Professor extends Conexao_bd {
+	
 	private Integer codProfessor;
 	private String nomeProfessor, cpfProfessor, generoProfessor, emailProfessor, telefoneProfessor, cepProfessor, statusProfessor;
 	private Date dataNascimentoProfessor;
@@ -185,7 +186,7 @@ public class Professor extends Conexao_bd{
 	}
 	
 	public boolean profDeletar() {
-	    String sql = "DELETE FROM tbl_professor WHERE id_professor = ?";
+	    String sql = "DELETE FROM tbl_professor WHERE cod_professor = ?";
 	    
 	    try {
 	        conectar();
@@ -205,5 +206,48 @@ public class Professor extends Conexao_bd{
 	        return false;
 	    }
 	}
+	
+	public ResultSet profConsulta() throws SQLException {
+        final String sql = "SELECT cod_professor, nome_professor, cpf_professor, data_nascimento_professor, " +
+                "genero_professor, email_professor, telefone_professor, cep_professor, " +
+                "salario_professor, status_professor FROM tbl_professor";
 
+        try {
+            conectar();
+            try (PreparedStatement consulta = conexao.prepareStatement(sql)) {
+
+                try (ResultSet professor = consulta.executeQuery()) {
+                    while (professor.next()) {
+                        codProfessor = professor.getInt("cod_professor");
+                        nomeProfessor = professor.getString("nome_professor");
+                        cpfProfessor = professor.getString("cpf_professor");
+                        dataNascimentoProfessor = professor.getDate("data_nascimento_professor");
+                        generoProfessor = professor.getString("genero_professor");
+                        emailProfessor = professor.getString("email_professor");
+                        telefoneProfessor = professor.getString("telefone_professor");
+                        cepProfessor = professor.getString("cep_professor");
+                        salarioProfessor = professor.getFloat("salario_professor");
+                        statusProfessor = professor.getString("status_professor");
+
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            throw new SQLException("Não foi possível executar a CONSULTA solicitada.\n" + ex.getMessage());
+        }
+
+        return null; 
+    }
+	
+
+	@Override
+	public String toString() {
+		return "Professor [codProfessor=" + codProfessor + ", nomeProfessor=" + nomeProfessor + ", cpfProfessor="
+				+ cpfProfessor + ", generoProfessor=" + generoProfessor + ", emailProfessor=" + emailProfessor
+				+ ", telefoneProfessor=" + telefoneProfessor + ", cepProfessor=" + cepProfessor + ", statusProfessor="
+				+ statusProfessor + ", dataNascimentoProfessor=" + dataNascimentoProfessor + ", salarioProfessor="
+				+ salarioProfessor + "]";
+	}
+
+ 
 }
