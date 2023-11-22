@@ -13,11 +13,11 @@
 <h2>Tabela de conteúdos</h2>
 
 <!--ts-->
-   * [Descrição](#Descrição)
-   * [Status do projeto](#status-do-projeto)
+   * [Descrição](#descrição)
+   * [Status do projeto](#statusdoprojeto)
    * [Features](#features)
-   * [Demonstração da aplicação](#demonstracao-da-aplicacao)
-   * [Pré Requisitos e como rodar a aplicação/testes](#pre-requisitos)
+   * [Demonstração da aplicação](#demonstracaodaaplicacao)
+   * [Pré Requisitos e como rodar a aplicação/testes](#prerequisitos)
    * [Tecnologias Utilizadas](#tecnologias)
    * [Contribuição](#contribuicao)
    * [Autores](#autores)
@@ -37,7 +37,7 @@
 - [ ] Curso
 - [ ] Formulário dos Cursos
 
-<h2>Demonstração da aplicação</h2>
+<div id='Demonstração da aplicação'/> 
 <div><img src="https://user-images.githubusercontent.com/103777227/284984508-a6b43125-8965-47bd-9819-84f9bc8cdd42.jpg"/></div>
 
 
