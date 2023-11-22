@@ -16,7 +16,7 @@
    * [Descrição](#Descrição)
    * [Status do projeto](#status-do-projeto)
    * [Features](#features)
-   * [Demonstração da aplicação](#demonstracao-da-aplicacao)
+   * [Demonstração da aplicação](#demonstracao)
    * [Pré Requisitos e como rodar a aplicação/testes](#pre-requisitos)
    * [Tecnologias Utilizadas](#tecnologias)
    * [Contribuição](#contribuicao)
