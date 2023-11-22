@@ -2,9 +2,11 @@
 
 <div><img src="https://github.com/Marlon1337s/CourseFlow/assets/101845962/f3a4aac8-908a-44ff-a867-9c00ead67036.png"/></div>
 
+<div id='description'/>
 <h2>Course Flow</h2> 
 <p>O course flow é um sistema de gerenciamento e automatização do processo de administração e acompanhamento dos cursos cadastrados na plataforma.  Ele permite criar, organizar, publicar e acompanhar os cursos, além de facilitar a gestão dos usuários, tais como: alunos e professores. Tem como objetivo principal a simplificação de tarefas comuns ao meio a fim de tornar o processo de ensino e aprendizado mais eficiente</p>
 
+<div id='status'/>
 <h4 align="center"> 
 	🚧  Projeto 🚀 Em construção...  🚧
 </h4>
@@ -13,16 +15,17 @@
 <h2>Tabela de conteúdos</h2>
 
 <!--ts-->
-   * [Descrição](#descrição)
-   * [Status do projeto](#statusdoprojeto)
+   * [Descrição](#description)
+   * [Status do projeto](#status)
    * [Features](#features)
-   * [Demonstração da aplicação](#demonstracaodaaplicacao)
-   * [Pré Requisitos e como rodar a aplicação/testes](#prerequisitos)
-   * [Tecnologias Utilizadas](#tecnologias)
-   * [Contribuição](#contribuicao)
+   * [Demonstração da aplicação](#demonstration)
+   * [Pré Requisitos e como rodar a aplicação/testes](#prerequisites)
+   * [Tecnologias Utilizadas](#technologies)
+   * [Contribuição](#contributions)
    * [Autores](#autores)
 <!--te-->
 
+<div id='features'/>
 <h2>Features</h2>
 
 - [ ] Conexão com o Banco
@@ -37,10 +40,11 @@
 - [ ] Curso
 - [ ] Formulário dos Cursos
 
-<div id='Demonstração da aplicação'/> 
+<div id='demonstration'/> 
+<h2>Demonstração da aplicação</h2>
 <div><img src="https://user-images.githubusercontent.com/103777227/284984508-a6b43125-8965-47bd-9819-84f9bc8cdd42.jpg"/></div>
 
-
+<div id='prerequisites'/> 
 <h2>Pré-requisitos</h2>
 <p>Antes de começar, será necessário a instalação das ferramentas eclipse ou vscode na sua máquina: (https://eclipseide.org/) ou (https://code.visualstudio.com/download)</p>
 
@@ -62,6 +66,7 @@ $ npm run dev:server
 
 <h3>O servidor inciará na porta:3333 - acesse <http://localhost:3333></h3>
 
+<div id='technologies'/> 
 <h2>Tecnologias Utilizadas</h2>
 
 <!--ts-->
@@ -75,6 +80,7 @@ $ npm run dev:server
 </div><br>
 <!--te-->
 
+<div id='contributions'/>
 <h2>Contribuições</h2>
 
 <!--ts-->
