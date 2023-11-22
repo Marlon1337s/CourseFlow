@@ -22,7 +22,6 @@
    * [Pré Requisitos e como rodar a aplicação/testes](#prerequisites)
    * [Tecnologias Utilizadas](#technologies)
    * [Contribuição](#contributions)
-   * [Autores](#autores)
 <!--te-->
 
 <div id='features'/>
