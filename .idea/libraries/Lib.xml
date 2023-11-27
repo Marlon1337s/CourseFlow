@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CurseFlowFront/AppCurse/lib/Lib/miglayout-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CurseFlowFront/AppCurse/lib/Lib/AbsoluteLayout.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CurseFlowFront/AppCurse/lib/Lib/jsvg-1.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CurseFlowFront/AppCurse/lib/Lib/swing-glasspane-popup-1.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CurseFlowFront/AppCurse/lib/Lib/miglayout-swing.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CurseFlowFront/AppCurse/lib/Lib/flatlaf-extras-3.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CurseFlowFront/AppCurse/lib/Lib/flatlaf-fonts-roboto-2.137.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CurseFlowFront/AppCurse/lib/Lib/org-netbeans-modules-java-j2seproject-copylibstask.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CurseFlowFront/AppCurse/lib/Lib/flatlaf-3.2.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
