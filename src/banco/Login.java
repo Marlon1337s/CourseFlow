@@ -21,17 +21,24 @@ public class Login extends Conexao_bd {
 	}
 	
 	public boolean validarLogin(String login, String senha) {
-	String sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '" + login + "' AND senha_usuario =" + "'"+ senha+"';";        
-       
+		String sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = ? AND senha_usuario = ?";
+
         try {
-		if(super.executarConsulta(sql) != null) {
-		  return true;
-		}else {
-		  return false;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
+            ResultSet resultSet;
+            conectar();
+            try (PreparedStatement statement = conexao.prepareStatement(sql)) {
+                statement.setString(1, login);
+                statement.setString(2, senha);
+                resultSet = statement.executeQuery();
+                return resultSet.next(); 
+            } finally {
+                if (conexao != null && !conexao.isClosed()) {
+                    conexao.close();
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
     }
 }
