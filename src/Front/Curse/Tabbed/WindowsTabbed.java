@@ -1,5 +1,6 @@
 package Front.Curse.Tabbed;
 
+import Front.Curse.Form.CursosForm;
 import com.formdev.flatlaf.FlatClientProperties;
 import com.formdev.flatlaf.extras.FlatSVGIcon;
 import java.awt.Component;
@@ -44,7 +45,7 @@ public class WindowsTabbed {
     }
 
     private JButton createDrawerButton() {
-        JButton cmd = new JButton(new FlatSVGIcon("Curse/Svg/menu.svg", 0.9f));
+        JButton cmd = new JButton(new FlatSVGIcon("Front/Curse/Svg/menu.svg", 0.9f));
         cmd.addActionListener((ae) -> {
             Drawer.getInstance().showDrawer();
         });
@@ -106,6 +107,10 @@ public class WindowsTabbed {
     }
 
     public void addTab(String formTitle, JPanel form) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void addTab(String cursos, CursosForm cursosForm) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

@@ -2,6 +2,7 @@
 package Front.Curse.Login;
 
 import Back.Curse.ValidarBanco.Login;
+import Front.Curse.Main.Main;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.fonts.roboto.FlatRobotoFont;
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
@@ -310,8 +311,11 @@ public class TelaLogin extends javax.swing.JFrame {
                 boolean loginValido = VLogin.validarLogin(login, senha);
 
                 if (loginValido==true) {
-                    
                     JOptionPane.showMessageDialog(null,"LOGIN REALIZADO COM SUCESSO!");
+                    Main Main = new Main();
+                    Main.setVisible(true);
+                    this.dispose();
+                   
                 }else {
                     JOptionPane.showMessageDialog(null,"USUÁRIO OU SENHA INCORRETOS!");
                 }

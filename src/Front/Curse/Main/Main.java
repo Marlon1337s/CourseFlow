@@ -47,11 +47,11 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
+            .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 1188, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
+            .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
         );
 
         pack();
@@ -63,7 +63,7 @@ public class Main extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
             FlatRobotoFont.install();
-            FlatLaf.registerCustomDefaultsSource("curse.themes");
+            FlatLaf.registerCustomDefaultsSource("Front.Curse.Themes");
             UIManager.put("defaultFont",new Font(FlatRobotoFont.FAMILY, Font.PLAIN,13));
             FlatMacDarkLaf.setup();
         java.awt.EventQueue.invokeLater(new Runnable() {

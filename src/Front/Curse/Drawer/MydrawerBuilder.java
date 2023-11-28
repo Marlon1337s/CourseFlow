@@ -2,7 +2,6 @@ package Front.Curse.Drawer;
 
 import Front.Curse.Form.AlunosForm;
 import Front.Curse.Tabbed.WindowsTabbed;
-import java.awt.desktop.AppHiddenEvent;
 import raven.drawer.component.SimpleDrawerBuilder;
 import raven.drawer.component.footer.SimpleFooterData;
 import raven.drawer.component.header.SimpleHeaderData;
@@ -21,7 +20,7 @@ public class MydrawerBuilder extends SimpleDrawerBuilder{
     @Override
     public SimpleHeaderData getSimpleHeaderData() {
           return new SimpleHeaderData()
-                .setIcon(new AvatarIcon(getClass().getResource("/Curse/Image/PerfilADM.jpg"), 60, 60, 999))
+                .setIcon(new AvatarIcon(getClass().getResource("Front/Curse/Image/Perfil.jpg"), 60, 60, 999))
                 .setTitle("Admin")
                 .setDescription("curseflow@gmail.com");
     }
@@ -29,8 +28,6 @@ public class MydrawerBuilder extends SimpleDrawerBuilder{
     @Override //Nome dos Menus
     public SimpleMenuOption getSimpleMenuOption() {
       String menus[][] = {
-            {"~MAIN~"},
-            {"Dashboard"},
             {"~MENU~"},
             {"Alunos"},
             {"Cursos"},
@@ -50,14 +47,14 @@ public class MydrawerBuilder extends SimpleDrawerBuilder{
         return new SimpleMenuOption()
                 .setMenus(menus)
                 .setIcons(icons)
-                .setBaseIconPath("Curse/Drawer/Icon")
+                .setBaseIconPath("Front/Curse/Drawer/Icon")
                 .setIconScale(0.45f)
                 .addMenuEvent(new MenuEvent() {
                     @Override
                     public void selected(MenuAction action, int index, int subIndex) {
                         if(index==0){
-                            WindowsTabbed.getInstance().addTab("Aluno", new AlunosForm());
-                        }
+                           WindowsTabbed.getInstance().addTab("Alunos", new AlunosForm());
+                                                   }
                         System.out.println("Menu selected " + index + " " + subIndex);
                     }
                 })
