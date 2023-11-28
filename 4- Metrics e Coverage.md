@@ -1,4 +1,4 @@
-<h1>Course Flow</h1>
+<h2>Course Flow</h2>
 
 <h3>Metrics e Coverage</h3>
 <p>Para assegurar a qualidade e eficiência do sistema, foram implementados testes utilizando métricas e cobertura para avaliar alguns aspectos do software.</p>
