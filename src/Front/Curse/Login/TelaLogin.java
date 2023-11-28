@@ -63,7 +63,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(20, 23, 38));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/FundoLogo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Front/Curse/Icon/FundoLogo.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -124,7 +124,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel6.setText("_____________________________________________");
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/IconUsuario.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Front/Curse/Icon/IconUsuario.png"))); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(132, 4, 217));
@@ -143,7 +143,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel9.setText("_____________________________________________");
 
         disable.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        disable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/IconInvisivel.png"))); // NOI18N
+        disable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Front/Curse/Icon/IconInvisivel.png"))); // NOI18N
         disable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         disable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -152,7 +152,7 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         show.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/iconOlho.png"))); // NOI18N
+        show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Front/Curse/Icon/iconOlho.png"))); // NOI18N
         show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         show.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
