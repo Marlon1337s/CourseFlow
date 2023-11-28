@@ -34,7 +34,6 @@
 - [ ] Cadastro de Professor
 - [ ] Formulário de Professores
 - [ ] Cadastro de Turma
-- [ ] Formulário da
 - [ ] Login
 - [ ] Curso
 - [ ] Formulário dos Cursos
