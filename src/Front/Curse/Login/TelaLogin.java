@@ -7,12 +7,9 @@ import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.fonts.roboto.FlatRobotoFont;
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+
 
 
 
@@ -311,12 +308,12 @@ public class TelaLogin extends javax.swing.JFrame {
                 boolean loginValido = VLogin.validarLogin(login, senha);
 
                 if (loginValido==true) {
-                    JOptionPane.showMessageDialog(null,"LOGIN REALIZADO COM SUCESSO!");
                     Main Main = new Main();
                     Main.setVisible(true);
                     this.dispose();
                    
                 }else {
+                    
                     JOptionPane.showMessageDialog(null,"USUÁRIO OU SENHA INCORRETOS!");
                 }
 
@@ -343,7 +340,7 @@ public class TelaLogin extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
             FlatRobotoFont.install();
-            FlatLaf.registerCustomDefaultsSource("curse.themes");
+            FlatLaf.registerCustomDefaultsSource("Front.Curse.Themes");
             UIManager.put("defaultFont",new Font(FlatRobotoFont.FAMILY, Font.PLAIN,13));
             FlatMacDarkLaf.setup();
        

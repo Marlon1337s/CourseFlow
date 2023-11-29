@@ -17,14 +17,14 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="709" max="32767" attributes="0"/>
-              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <Component id="crazyPanel1" pref="720" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-              <Component id="crazyPanel1" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -104,6 +104,18 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdDeleteActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="RefreshBanco">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Front/Curse/Icon/IconRefresh.png"/>
+                </Property>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="doubleBuffered" type="boolean" value="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RefreshBancoActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -116,45 +128,18 @@
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="11" rowCount="2">
+                  <Table columnCount="11" rowCount="1">
                     <Column editable="true" title="" type="java.lang.Boolean"/>
-                    <Column editable="true" title="Codigo" type="java.lang.String">
-                      <Data value="SeUPai"/>
-                      <Data value="null"/>
-                    </Column>
+                    <Column editable="true" title="Codigo" type="java.lang.String"/>
                     <Column editable="true" title="Nome" type="java.lang.String"/>
-                    <Column editable="true" title="CPF" type="java.lang.String">
-                      <Data value="2"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Data Nasc." type="java.lang.String">
-                      <Data value="2"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="G&#xea;nero" type="java.lang.String">
-                      <Data value="2"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Telefone" type="java.lang.String">
-                      <Data value="2"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Email" type="java.lang.String">
-                      <Data value="2"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="CEP" type="java.lang.String">
-                      <Data value="2"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Status" type="java.lang.String">
-                      <Data value="2"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Data Cadast" type="java.lang.String">
-                      <Data value="2"/>
-                      <Data value="null"/>
-                    </Column>
+                    <Column editable="true" title="CPF" type="java.lang.String"/>
+                    <Column editable="true" title="Data Nasc." type="java.lang.String"/>
+                    <Column editable="true" title="G&#xea;nero" type="java.lang.String"/>
+                    <Column editable="true" title="Telefone" type="java.lang.String"/>
+                    <Column editable="true" title="Email" type="java.lang.String"/>
+                    <Column editable="true" title="CEP" type="java.lang.String"/>
+                    <Column editable="true" title="Status" type="java.lang.String"/>
+                    <Column editable="true" title="Data Cadast" type="java.lang.String"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

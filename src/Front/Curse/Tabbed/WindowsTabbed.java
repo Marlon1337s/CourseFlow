@@ -106,4 +106,8 @@ public class WindowsTabbed {
     public void addTab(String formTitle, JPanel form) {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
+
+    public Component getMainComponent() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
