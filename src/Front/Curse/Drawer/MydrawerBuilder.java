@@ -1,6 +1,8 @@
 package Front.Curse.Drawer;
 
 import Front.Curse.Form.AlunosForm;
+import Front.Curse.Form.CursosForm;
+
 import Front.Curse.Tabbed.WindowsTabbed;
 import raven.drawer.component.SimpleDrawerBuilder;
 import raven.drawer.component.footer.SimpleFooterData;
@@ -20,7 +22,7 @@ public class MydrawerBuilder extends SimpleDrawerBuilder{
     @Override
     public SimpleHeaderData getSimpleHeaderData() {
           return new SimpleHeaderData()
-                .setIcon(new AvatarIcon(getClass().getResource("Front/Curse/Image/Perfil.jpg"), 60, 60, 999))
+                .setIcon(new AvatarIcon(getClass().getResource("../Image/PerfilADM.jpg"), 60, 60, 999))
                 .setTitle("Admin")
                 .setDescription("curseflow@gmail.com");
     }
@@ -41,7 +43,6 @@ public class MydrawerBuilder extends SimpleDrawerBuilder{
             "ui.svg",
             "forms.svg",
             "chart.svg",
-            "icon.svg",
             "Logout.svg",};
 
         return new SimpleMenuOption()
@@ -52,11 +53,33 @@ public class MydrawerBuilder extends SimpleDrawerBuilder{
                 .addMenuEvent(new MenuEvent() {
                     @Override
                     public void selected(MenuAction action, int index, int subIndex) {
-                        if(index==0){
-                           WindowsTabbed.getInstance().addTab("Alunos", new AlunosForm());
-                                                   }
-                        System.out.println("Menu selected " + index + " " + subIndex);
-                    }
+    if (index >= 0 && index <= 4) {
+        // Abra a tela correspondente ao índice
+        switch (index) {
+            case 0:
+                WindowsTabbed.getInstance().addTab("Alunos", new AlunosForm());
+                break;
+            // Adicione mais casos conforme necessário para os índices 1, 2, 3, 4
+            case 1:
+                WindowsTabbed.getInstance().addTab("Teste", new CursosForm());
+                break;
+            case 2:
+                // Abra a tela correspondente ao índice 2
+                break;
+            case 3:
+                // Abra a tela correspondente ao índice 3
+                break;
+            case 4:
+                // Abra a tela correspondente ao índice 4
+                break;
+            default:
+                break;
+        }
+    }
+    
+    System.out.println("Menu selected " + index + " " + subIndex);
+}
+
                 })
                 .setMenuValidation(new MenuValidation() {
                     @Override
@@ -77,5 +100,4 @@ public class MydrawerBuilder extends SimpleDrawerBuilder{
                 .setTitle("CurseFlow")
                 .setDescription("Version 0.0.1");
     }
-    
 }
