@@ -9,6 +9,7 @@ import java.awt.EventQueue;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import Back.Curse.Entidades.Aluno;
+import Back.Curse.Entidades.Curso;
 import java.awt.GridLayout;
 import java.sql.ResultSet;
 import java.text.ParseException;
@@ -24,55 +25,45 @@ import javax.swing.JTextField;
  * @author Bruno H
  */
 public class CursosForm extends TabbedForm {
-    Aluno alunoDao = new Aluno();
+    Curso cursoDao = new Curso();
+
     public CursosForm() {
         initComponents();
         testData(jTable1);
     }
-//     private void testData(JTable table) {
-//        DefaultTableModel model = (DefaultTableModel) table.getModel();
-//        model.addRow(new Object[]{false, "beear","Bruno"});
-//        ResultSet resultadoAluno = alunoDao.alunoConsulta();
-//        // To do  
-//     }
+
    private void testData(JTable table) {
-    DefaultTableModel model = (DefaultTableModel) table.getModel();
+      DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model.setRowCount(0);
 
-    // Limpa as linhas existentes no modelo da tabela
-    model.setRowCount(0);
+        try {
+            ResultSet resultadoCurso = cursoDao.cursoConsulta();
 
-    try {
-        ResultSet resultadoAluno = alunoDao.alunoConsulta();
+            if (resultadoCurso != null) {
+                while (resultadoCurso.next()) {
+                    int codCurso = resultadoCurso.getInt("cod_curso");
+                    String nomeCurso = resultadoCurso.getString("nome_curso");
+                    String conteudo = resultadoCurso.getString("conteudo");
+                    String status = resultadoCurso.getString("status");
+                    Float cargaHoraria = resultadoCurso.getFloat("cargaHoraria");
+                    Float valorMensalidade = resultadoCurso.getFloat("valorMensalidade");
 
-        while (resultadoAluno.next()) {
-            // Recuperando dados do ResultSet
-            int codAluno = resultadoAluno.getInt("cod_aluno");
-            String nomeAluno = resultadoAluno.getString("nome_aluno");
-            String cpfAluno = resultadoAluno.getString("cpf_aluno");
-            Date dataNascimentoAluno = resultadoAluno.getDate("data_nascimento_aluno");
-            String generoAluno = resultadoAluno.getString("genero_aluno");
-            String telefoneAluno = resultadoAluno.getString("telefone_aluno");
-            String emailAluno = resultadoAluno.getString("email_aluno");
-            String cepAluno = resultadoAluno.getString("cep_aluno");
-            String statusAluno = resultadoAluno.getString("status_aluno");
-
-            // Adicionando a linha ao modelo da tabela
-            model.addRow(new Object[]{
-                    false,
-                    codAluno,
-                    nomeAluno,
-                    cpfAluno,
-                    dataNascimentoAluno,
-                    generoAluno,
-                    telefoneAluno,
-                    emailAluno,
-                    cepAluno,
-                    statusAluno
-            });
+                    model.addRow(new Object[]{
+                            false,
+                            codCurso,
+                            nomeCurso,
+                            conteudo,
+                            status,
+                            cargaHoraria,
+                            valorMensalidade
+                    });
+                }
+            } else {
+                System.out.println("O ResultSet está nulo. Nenhum dado para exibir.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    } catch (Exception e) {
-        e.printStackTrace();
-    } 
 }
 
     @SuppressWarnings("unchecked")
@@ -174,14 +165,14 @@ public class CursosForm extends TabbedForm {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "", "Codigo", "Nome", "CPF", "Data Nasc.", "Gênero", "Telefone", "Email", "CEP", "Status", "Data Cadast"
+                "", "Codigo", "Curso", "Conteúdo", "Status", "Carga Hor.", "Valor Mens."
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {

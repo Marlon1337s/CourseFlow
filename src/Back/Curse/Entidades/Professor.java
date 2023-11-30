@@ -1,4 +1,4 @@
-package entidades;
+package Back.Curse.Entidades;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;

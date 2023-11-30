@@ -4,7 +4,6 @@ import Front.Curse.Form.AlunosForm;
 import Front.Curse.Form.CursosForm;
 import Front.Curse.Form.ProfessorForm;
 import Front.Curse.Form.TurmaForm;
-
 import Front.Curse.Tabbed.WindowsTabbed;
 import raven.drawer.component.SimpleDrawerBuilder;
 import raven.drawer.component.footer.SimpleFooterData;
@@ -75,7 +74,7 @@ public class MydrawerBuilder extends SimpleDrawerBuilder{
                 break;
             case 4:
                 // Abra a tela correspondente ao índice 4
-                
+             
                 break;
             default:
                 break;

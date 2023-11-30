@@ -1,6 +1,5 @@
 package Back.Curse.Entidades;
 
-import entidades.Professor;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.time.LocalDate;

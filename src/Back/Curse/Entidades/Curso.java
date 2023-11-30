@@ -1,6 +1,5 @@
 package Back.Curse.Entidades;
 
-//import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -159,16 +158,15 @@ public class Curso extends Conexao_bd {
 	
 	public ResultSet cursoConsulta(){
         final String SQL = "SELECT cod_curso, nome_curso, conteudo, status, cargaHoraria, valorMensalidade FROM tbl_curso";
-        try{
-        	conectar();
-        	PreparedStatement consulta = conexao.prepareStatement(SQL);
-            ResultSet rs = consulta.executeQuery();
-            System.out.println("Consulta realizada com sucesso!");
-            return rs;
-        }catch(SQLException e){
-            System.out.println("Erro ao consultar dados na tabela: " + e.getMessage());
+        try {
+            conectar();
+            PreparedStatement consulta = conexao.prepareStatement(SQL);
+            return consulta.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
+    
     }
 	
 	public ResultSet cursoConsultaEspecifica() throws SQLException {

@@ -124,7 +124,7 @@ public class Aluno extends Conexao_bd {
 	}
 
 	public boolean alunoCadastrar() {
-		String sql = "INSERT INTO tbl_aluno (nome_aluno, cpf_aluno, data_nascimento_aluno, genero_aluno, telefone_aluno, email_aluno, cep_aluno, status_aluno, turma_aluno) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO tbl_aluno (nome_aluno, cpf_aluno, data_nascimento_aluno, genero_aluno, telefone_aluno, email_aluno, cep_aluno, status_aluno) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		try {
 			conectar();
@@ -137,7 +137,7 @@ public class Aluno extends Conexao_bd {
             	inserir.setString(6, telefoneAluno);
             	inserir.setString(7, cepAluno);
             	inserir.setString(8, statusAluno);
-            	inserir.setInt(9, idTurmaAluno);
+            	//inserir.setInt(9, idTurmaAluno);
                 
                 int rowsAffected = inserir.executeUpdate();
 
@@ -154,7 +154,7 @@ public class Aluno extends Conexao_bd {
 	}
 	
 	public boolean alunoAlterar() {
-		String sql = "UPDATE tbl_aluno SET nome_aluno = ?, cpf_aluno = ?, data_nascimento_aluno = ?, genero_aluno = ?, telefone_aluno = ?, email_aluno = ?, cep_aluno = ?, status_aluno = ?, turma_aluno = ? WHERE cod_aluno = ?";
+		String sql = "UPDATE tbl_aluno SET nome_aluno = ?, cpf_aluno = ?, data_nascimento_aluno = ?, genero_aluno = ?, telefone_aluno = ?, email_aluno = ?, cep_aluno = ?, status_aluno = ? WHERE cod_aluno = ?";
 		
 		try {
 			conectar();
@@ -167,8 +167,8 @@ public class Aluno extends Conexao_bd {
             	alterar.setString(6, telefoneAluno);
             	alterar.setString(7, cepAluno);
             	alterar.setString(8, statusAluno);
-            	alterar.setInt(9, idTurmaAluno);
-            	alterar.setInt(10, codAluno);
+            	//alterar.setInt(9, idTurmaAluno);
+            	alterar.setInt(9, codAluno);
                 
                 int rowsAffected = alterar.executeUpdate();
 
@@ -207,7 +207,7 @@ public class Aluno extends Conexao_bd {
 	}
 	
 	public ResultSet alunoConsulta(){
-        final String SQL = "SELECT cod_aluno, nome_aluno, cpf_aluno, data_nascimento_aluno, genero_aluno, telefone_aluno, email_aluno, cep_aluno, status_aluno FROM tbl_aluno;";
+        final String SQL = "SELECT cod_aluno, nome_aluno, cpf_aluno, data_nascimento_aluno, genero_aluno, telefone_aluno, email_aluno, cep_aluno, status_aluno, data_cadastro_aluno FROM tbl_aluno;";
         try{
         	conectar();
         	PreparedStatement consulta = conexao.prepareStatement(SQL);
