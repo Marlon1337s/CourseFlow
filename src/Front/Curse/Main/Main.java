@@ -27,7 +27,7 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         WindowsTabbed.getInstance().install(this, body);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,6 +67,7 @@ public class Main extends javax.swing.JFrame {
             UIManager.put("defaultFont",new Font(FlatRobotoFont.FAMILY, Font.PLAIN,13));
             FlatMacDarkLaf.setup();
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Main().setVisible(true);
             }

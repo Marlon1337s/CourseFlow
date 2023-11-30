@@ -88,7 +88,6 @@ public class AlunosForm extends TabbedForm {
         jButton2 = new javax.swing.JButton();
         crazyPanel1 = new raven.crazypanel.CrazyPanel();
         crazyPanel2 = new raven.crazypanel.CrazyPanel();
-        txtSearch = new javax.swing.JTextField();
         cmdAdd = new javax.swing.JButton();
         cmdUpdate = new javax.swing.JButton();
         cmdDelete = new javax.swing.JButton();
@@ -96,7 +95,9 @@ public class AlunosForm extends TabbedForm {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        jButton2.setText("Change Mode");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Front/Curse/Icon/Dmoon.png"))); // NOI18N
+        jButton2.setDisabledIcon(null);
+        jButton2.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Front/Curse/Icon/Lmoon.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -117,7 +118,6 @@ public class AlunosForm extends TabbedForm {
         crazyPanel2.setFlatLafStyleComponent(new raven.crazypanel.FlatLafStyleComponent(
             "background:$Table.background",
             new String[]{
-                "JTextField.placeholderText=Pesquisar;background:@background",
                 "background:lighten(@background,8%);borderWidth:1",
                 "background:lighten(@background,8%);borderWidth:1",
                 "background:lighten(@background,8%);borderWidth:1",
@@ -132,15 +132,6 @@ public class AlunosForm extends TabbedForm {
                 "width 200"
             }
         ));
-
-        txtSearch.setToolTipText("");
-        txtSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchActionPerformed(evt);
-            }
-        });
-        crazyPanel2.add(txtSearch);
 
         cmdAdd.setText("Adicionar");
         cmdAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -189,16 +180,9 @@ public class AlunosForm extends TabbedForm {
             Class[] types = new Class [] {
                 java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true, true, true, true, true
-            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(jTable1);
@@ -224,7 +208,7 @@ public class AlunosForm extends TabbedForm {
                 .addContainerGap()
                 .addComponent(jButton2)
                 .addGap(27, 27, 27)
-                .addComponent(crazyPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 739, Short.MAX_VALUE)
+                .addComponent(crazyPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 731, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -544,10 +528,6 @@ public class AlunosForm extends TabbedForm {
         model.fireTableDataChanged();
     }//GEN-LAST:event_RefreshBancoActionPerformed
 
-    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
-
-    }//GEN-LAST:event_txtSearchActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -591,6 +571,5 @@ public class AlunosForm extends TabbedForm {
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }
