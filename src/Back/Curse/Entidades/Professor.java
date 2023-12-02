@@ -210,7 +210,7 @@ public class Professor extends Conexao_bd {
 	public ResultSet profConsulta(){
         final String SQL =  "SELECT cod_professor, nome_professor, cpf_professor, data_nascimento_professor, " +
                 "genero_professor, email_professor, telefone_professor, cep_professor, " +
-                "salario_professor, status_professor FROM tbl_professor";
+                "salario_professor, status_professor, data_cadastro_professor FROM tbl_professor";
         try{
         	conectar();
         	PreparedStatement consulta = conexao.prepareStatement(SQL);

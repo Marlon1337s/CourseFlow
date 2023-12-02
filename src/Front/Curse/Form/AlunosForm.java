@@ -9,6 +9,9 @@ import java.awt.EventQueue;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import Back.Curse.Entidades.Aluno;
+import Front.Curse.Login.TelaLogin;
+import com.formdev.flatlaf.fonts.roboto.FlatRobotoFont;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.sql.ResultSet;
 import java.text.ParseException;
@@ -18,6 +21,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 /**
  *
@@ -31,12 +35,6 @@ public class AlunosForm extends TabbedForm {
         initComponents();
         testData(jTable1);
     }
-//     private void testData(JTable table) {
-//        DefaultTableModel model = (DefaultTableModel) table.getModel();
-//        model.addRow(new Object[]{false, "beear","Bruno"});
-//        ResultSet resultadoAluno = alunoDao.alunoConsulta();
-//        // To do  
-//     }
 
     private void testData(JTable table) {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
@@ -47,7 +45,7 @@ public class AlunosForm extends TabbedForm {
         try {
             ResultSet resultadoAluno = alunoDao.alunoConsulta();
 
-            while (resultadoAluno.next()) {
+               while (resultadoAluno.next()) {
                 // Recuperando dados do ResultSet
                 int codAluno = resultadoAluno.getInt("cod_aluno");
                 String nomeAluno = resultadoAluno.getString("nome_aluno");
@@ -73,8 +71,7 @@ public class AlunosForm extends TabbedForm {
                     emailAluno,
                     cepAluno,
                     statusAluno,
-                    dataCadastroAluno
-                });
+                    dataCadastroAluno});
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -94,6 +91,8 @@ public class AlunosForm extends TabbedForm {
         RefreshBanco = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Front/Curse/Icon/Dmoon.png"))); // NOI18N
         jButton2.setDisabledIcon(null);
@@ -174,7 +173,7 @@ public class AlunosForm extends TabbedForm {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "", "Codigo", "Nome", "CPF", "Data Nasc.", "Gênero", "Telefone", "Email", "CEP", "Status", "Data Cadast"
+                "", "Codigo", "Nome", "CPF", "Data Nasc.", "Gênero", "Telefone", "Email", "CEP", "Status", "Data Cad."
             }
         ) {
             Class[] types = new Class [] {
@@ -189,6 +188,19 @@ public class AlunosForm extends TabbedForm {
 
         crazyPanel1.add(jScrollPane1);
 
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Front/Curse/Icon/students.png"))); // NOI18N
+        jLabel1.setText("ALUNOS");
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Front/Curse/Icon/logout.png"))); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -197,8 +209,12 @@ public class AlunosForm extends TabbedForm {
                 .addGap(50, 50, 50)
                 .addComponent(crazyPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
                 .addGap(50, 50, 50))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
                 .addGap(10, 10, 10))
         );
@@ -206,9 +222,19 @@ public class AlunosForm extends TabbedForm {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton2)
-                .addGap(27, 27, 27)
-                .addComponent(crazyPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 731, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(15, 15, 15))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(crazyPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -374,7 +400,7 @@ public class AlunosForm extends TabbedForm {
             // Adicione outros rótulos e campos de texto...
 
             // Exiba a janela de diálogo com os campos de entrada
-            int result = JOptionPane.showConfirmDialog(null, panel, "Adicionar Aluno",
+            int result = JOptionPane.showConfirmDialog(null, panel, "Editar Aluno",
                     JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 
             // Verifique se o usuário clicou em OK (Adicionar)
@@ -520,13 +546,30 @@ public class AlunosForm extends TabbedForm {
     }//GEN-LAST:event_cmdDeleteActionPerformed
 
     private void RefreshBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshBancoActionPerformed
-        // Antes de atualizar a tabela, busque novamente os dados do banco de dados
+        // Botão de Atualizar com Banco
         testData(jTable1);
-
-        // Certifique-se de que o modelo da tabela seja atualizado
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.fireTableDataChanged();
     }//GEN-LAST:event_RefreshBancoActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+   // Botão de Logout
+    int resposta = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja sair?", "Confirmação", JOptionPane.YES_NO_OPTION);
+
+    
+    if (resposta == JOptionPane.YES_OPTION) {
+        java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor(jButton1);
+        
+        if (window != null) {
+            window.dispose();
+        }
+
+        TelaLogin telaLogin = new TelaLogin();
+        telaLogin.setVisible(true);
+    }
+    
+
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -554,6 +597,10 @@ public class AlunosForm extends TabbedForm {
             java.util.logging.Logger.getLogger(AlunosForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+         FlatRobotoFont.install();
+            FlatLaf.registerCustomDefaultsSource("Front.Curse.Themes");
+            UIManager.put("defaultFont",new Font(FlatRobotoFont.FAMILY, Font.PLAIN,13));
+            FlatMacDarkLaf.setup();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
@@ -568,8 +615,12 @@ public class AlunosForm extends TabbedForm {
     private javax.swing.JButton cmdUpdate;
     private raven.crazypanel.CrazyPanel crazyPanel1;
     private raven.crazypanel.CrazyPanel crazyPanel2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    
 }

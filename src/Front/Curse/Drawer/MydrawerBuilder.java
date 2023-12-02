@@ -4,11 +4,7 @@ import Front.Curse.Form.AlunosForm;
 import Front.Curse.Form.CursosForm;
 import Front.Curse.Form.ProfessorForm;
 import Front.Curse.Form.TurmaForm;
-import Front.Curse.Login.TelaLogin;
 import Front.Curse.Tabbed.WindowsTabbed;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import raven.drawer.component.SimpleDrawerBuilder;
 import raven.drawer.component.footer.SimpleFooterData;
 import raven.drawer.component.header.SimpleHeaderData;
@@ -39,16 +35,14 @@ public class MydrawerBuilder extends SimpleDrawerBuilder {
             {"Alunos"},
             {"Cursos"},
             {"Professores"},
-            {"Turmas"},
-            {"Logout"}};
+            {"Turmas"}};
 
         //icones dos Menus
         String icons[] = {
             "dashboard.svg",
             "ui.svg",
             "forms.svg",
-            "chart.svg",
-            "Logout.svg",};
+            "chart.svg",};
 
         return new SimpleMenuOption()
                 .setMenus(menus)
@@ -75,10 +69,6 @@ public class MydrawerBuilder extends SimpleDrawerBuilder {
                                 case 3:
                                     // Abra a tela correspondente ao índice 3
                                     WindowsTabbed.getInstance().addTab("Turma", new TurmaForm());
-                                    break;
-                                case 4:
-                                    // Exibir mensagem de confirmação
-                                  
                                     break;
                                 default:
                                     break;
