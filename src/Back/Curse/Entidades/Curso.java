@@ -9,26 +9,25 @@ import Back.Curse.ValidarBanco.Conexao_bd;
 public class Curso extends Conexao_bd {
 	
 	private Integer codCurso;
-	private String nomeCurso,conteudo , status;
+	private String nomeCurso, conteudo, status;
 	private Float valorMensalidade, cargaHoraria;
 	
 	public Curso() {
 	}
 	
-	public Curso(String nome, String conteudo, String status, Float cargaHoraria, Float valorMensalidade ) {
+	public Curso(String nome, String conteudo, String status, Float cargaHoraria, Float valorMensalidade) {
 		this.nomeCurso = nome;
 		this.conteudo = conteudo;
 		this.status = status;
 		this.cargaHoraria = cargaHoraria;
 		this.valorMensalidade = valorMensalidade;
 	}
-		
 	
 	public Integer getCodCurso() {
 		return codCurso;
 	}
 
-	public void setCodCurso(int codCurso) {
+	public void setCodCurso(Integer codCurso) {
 		this.codCurso = codCurso;
 	}
 	
@@ -48,11 +47,11 @@ public class Curso extends Conexao_bd {
 		this.status = status;
 	}
 	
-	public String getConteudo () {
+	public String getConteudo() {
 		return conteudo;
 	}
 	
-	public void setConteudo (String conteudo) {
+	public void setConteudo(String conteudo) {
 		this.conteudo = conteudo;
 	}
 	
@@ -60,18 +59,17 @@ public class Curso extends Conexao_bd {
 		return valorMensalidade;
 	}
 	
-	public void setValorMensalidade (Float valorMensalidade) {
+	public void setValorMensalidade(Float valorMensalidade) {
 		this.valorMensalidade = valorMensalidade;
 	}
 	
-	public Float getCargaHoraria () {
+	public Float getCargaHoraria() {
 		return cargaHoraria;
 	}
 
-	public void setCargaHoraria (Float cargaHoraria) {
+	public void setCargaHoraria(Float cargaHoraria) {
 		this.cargaHoraria = cargaHoraria;
 	}
-	
 	
 	public void setCurso(Integer codCurso, String nome, String conteudo, String status, Float cargaHoraria, Float valorMensalidade) {
 		setCodCurso(codCurso);
@@ -79,19 +77,20 @@ public class Curso extends Conexao_bd {
 		setConteudo(conteudo);
 		setStatus(status);
 		setCargaHoraria(cargaHoraria);
-		}
+		setValorMensalidade(valorMensalidade);
+	}
 
 	public boolean cursoCadastrar() {
-		String sql = "INSERT INTO tbl_curso (nome_curso, conteudo, cargaHoraria, valorMensalidade, status) VALUES (?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO tbl_curso (nome_curso, conteudo_curso, carga_horaria_curso, valor_mensalidade_curso, status_curso) VALUES (?, ?, ?, ?, ?)";
 		
 		try {
 			conectar();
             try (PreparedStatement inserir = conexao.prepareStatement(sql)) {
             	inserir.setString(1, nomeCurso);
             	inserir.setString(2, conteudo);
-            	inserir.setString(3, status);
-            	inserir.setFloat(4, cargaHoraria);
-            	inserir.setFloat(5, valorMensalidade);
+            	inserir.setFloat(3, cargaHoraria);
+            	inserir.setFloat(4, valorMensalidade);
+            	inserir.setString(5, status);
                 
                 int rowsAffected = inserir.executeUpdate();
 
@@ -108,16 +107,16 @@ public class Curso extends Conexao_bd {
 	}
 	
 	public boolean cursoAlterar() {
-		String sql = "UPDATE tbl_curso SET nome_curso = ?, conteudo = ?, status = ?, cargaHoraria = ?, valorMensalidade = ?  WHERE cod_curso = ?";
+		String sql = "UPDATE tbl_curso SET nome_curso = ?, conteudo_curso = ?, carga_horaria_curso = ?, valor_mensalidade_curso = ?, status_curso = ?  WHERE cod_curso = ?";
 		
 		try {
 			conectar();
             try (PreparedStatement alterar = conexao.prepareStatement(sql)) {
             	alterar.setString(1, nomeCurso);
             	alterar.setString(2, conteudo);
-            	alterar.setString(3, status);
-            	alterar.setFloat(4, cargaHoraria);
-            	alterar.setFloat(5, valorMensalidade);
+            	alterar.setFloat(3, cargaHoraria);
+            	alterar.setFloat(4, valorMensalidade);
+            	alterar.setString(5, status);
             	alterar.setInt(6, codCurso);
                 
                 int rowsAffected = alterar.executeUpdate();
@@ -157,7 +156,7 @@ public class Curso extends Conexao_bd {
 	}
 	
 	public ResultSet cursoConsulta(){
-        final String SQL = "SELECT cod_curso, nome_curso, conteudo, status, cargaHoraria, valorMensalidade FROM tbl_curso";
+        final String SQL = "SELECT cod_curso, nome_curso, conteudo_curso, carga_horaria_curso, valor_mensalidade_curso, status_curso, data_cadastro_curso FROM tbl_curso";
         try {
             conectar();
             PreparedStatement consulta = conexao.prepareStatement(SQL);
@@ -166,7 +165,6 @@ public class Curso extends Conexao_bd {
             e.printStackTrace();
             return null;
         }
-    
     }
 	
 	public ResultSet cursoConsultaEspecifica() throws SQLException {
@@ -180,10 +178,10 @@ public class Curso extends Conexao_bd {
                     while (curso.next()) {
                         codCurso = curso.getInt("cod_curso");
                         nomeCurso = curso.getString("nome_curso");
-                        conteudo = curso.getString("conteudo");
-                        status = curso.getString("status");
-                        cargaHoraria = curso.getFloat("cargaHoraria");
-                        valorMensalidade = curso.getFloat("valorMensalidade");
+                        conteudo = curso.getString("conteudo_curso");
+                        status = curso.getString("status_curso");
+                        cargaHoraria = curso.getFloat("carga_horaria_curso");
+                        valorMensalidade = curso.getFloat("valor_mensalidade_curso");
                     }
                 }
             }
@@ -193,11 +191,10 @@ public class Curso extends Conexao_bd {
 
         return null; 
     }
-	
 
 	@Override
 	public String toString() {
-		return "Curso [codCurso=" + codCurso + ", conteudo=" + conteudo + ", status=" + status + ", cargaHoraria=" + cargaHoraria + ", valorMensalidade=" + valorMensalidade + "]";
+		return "Curso [codCurso=" + codCurso + ", nomeCurso=" + nomeCurso + ", conteudo=" + conteudo + ", status=" + status + ", cargaHoraria=" + cargaHoraria + ", valorMensalidade=" + valorMensalidade + "]";
 	}
 
 }
