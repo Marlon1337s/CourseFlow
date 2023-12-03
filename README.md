@@ -27,7 +27,7 @@
 <div id='features'/>
 <h2>Features</h2>
 
-- [ ] Conexão com o Banco
+- [ x] Conexão com o Banco
 - [ ] Cadastro de Administrador
 - [ ] Cadastro de Aluno
 - [ ] Formulário de Alunos
