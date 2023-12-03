@@ -38,7 +38,6 @@ public class AlunosForm extends TabbedForm {
 
     private void testData(JTable table) {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
-
         // Limpa as linhas existentes no modelo da tabela
         model.setRowCount(0);
 
@@ -285,15 +284,13 @@ public class AlunosForm extends TabbedForm {
         panel.add(txtCep);
         panel.add(new JLabel("Status:"));
         panel.add(txtStatus);
-        // Adicione outros rótulos e campos de texto...
-
+        
         // Exiba a janela de diálogo com os campos de entrada
         int result = JOptionPane.showConfirmDialog(null, panel, "Adicionar Aluno",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 
         // Verifique se o usuário clicou em OK (Adicionar)
         if (result == JOptionPane.OK_OPTION) {
-            // Obtenha os valores dos campos de texto
             String nome = txtNome.getText();
             String cpf = txtCpf.getText();
             String dataNascimentoStr = txtDataNascimento.getText();
@@ -302,8 +299,7 @@ public class AlunosForm extends TabbedForm {
             String email = txtEmail.getText();
             String telefone = txtTelefone.getText();
             String status = txtStatus.getText();
-            // Obtenha outros valores dos campos de texto...
-
+           
             // Converte a string da data de nascimento para um objeto Date
             java.sql.Date dataNascimento = null;
             try {
@@ -325,7 +321,7 @@ public class AlunosForm extends TabbedForm {
             aluno.setTelefoneAluno(telefone);
             aluno.setStatusAluno(status);
 
-            // Configure outros valores do aluno...
+            
             // Adicione o aluno ao banco de dados
             boolean sucesso = aluno.alunoCadastrar();
 
